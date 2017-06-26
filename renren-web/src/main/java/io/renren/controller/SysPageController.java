@@ -1,6 +1,7 @@
 package io.renren.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SysPageController {
 	
 	@RequestMapping("sys/{url}.html")
-	public String page(@PathVariable("url") String url){
+	public String page(@PathVariable("url") String url, Model model){
+		model.addAttribute("abc","123");
 		return "sys/" + url + ".html";
 	}
 
